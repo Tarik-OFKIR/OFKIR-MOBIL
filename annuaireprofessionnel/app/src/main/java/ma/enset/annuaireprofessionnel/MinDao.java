@@ -1,0 +1,34 @@
+package ma.enset.annuaireprofessionnel;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
+import java.util.List;
+
+@Dao
+public interface MinDao {
+    // Insert query
+    @Insert
+    void insert(Contact contact);
+    // Delete query
+
+    @Delete
+    void reset(List<Contact> contacts);
+    //to do
+
+    // Update query
+    @Update
+    void update(Contact contact);
+
+    @Delete
+    void delete(Contact contact);
+
+
+    // Get all data query
+    @Query("SELECT * FROM contact")
+    List<Contact> getAll();
+
+}
